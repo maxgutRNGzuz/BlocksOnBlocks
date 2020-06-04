@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &744722758565906696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744722758565906702}
+  - component: {fileID: 744722758565906697}
+  m_Layer: 0
+  m_Name: PlatformGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744722758565906702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744722758565906696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744722758565906697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744722758565906696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34079a169474e4a49bfa75fb3829f087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneHandler: {fileID: 0}
+  player: {fileID: 0}
+  platformsOnScene: 2
+  ezPlatforms:
+  - {fileID: 3087081848572520606, guid: d541d44644106b045bcbf1dd006b8e9e, type: 3}
+  - {fileID: 3087081848572520606, guid: 6d952dc1ff552d6438275f86f3461bca, type: 3}
+  ezPlatformsNum: 2
+  platforms:
+  - {fileID: 7958588133340811303, guid: 73cd2d15d419f6e438fdeda26f66fb00, type: 3}
+  - {fileID: 3834074180559229974, guid: 2ce1652cf4878db46ac99b422b375efc, type: 3}
+  - {fileID: 5384562555681025970, guid: 31dd2f12a372a854a8a6a7e7b3c33a5c, type: 3}
+  - {fileID: 8147425417792188314, guid: d9e2666ba517950439bf2baa8c644f2e, type: 3}
+  specialPlatforms:
+  - {fileID: 4844408797877522589, guid: d74cfa83481fb9a48be28836bf2fc867, type: 3}
+  - {fileID: 101761285628786270, guid: 12df11c5dd4f1404ead609618374d806, type: 3}
+  - {fileID: 9003510330327617887, guid: 1f08f1cd5cfb7fc4096ce1d083db8d6c, type: 3}
+  firstPlatformZ: 170
+  distBetweenPlatforms: 205
+  distBeforePlatformDespawn: 5
+  platformsTillNextLevel: 10
+  connector: {fileID: 3791298361127264431, guid: 0712db1585f84934caa2f3940515afd6,
+    type: 3}
+  firstConnectorZ: 67.5
+  connectorDistance: 205
+  connectorXSpawnPos:
+  - -1.5
+  - 0
+  - 1.5
