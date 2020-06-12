@@ -45,6 +45,7 @@ public class PlayerUI : MonoBehaviour
             PlayerPrefs.SetInt("FIRSTTIMEOPENING", 1);
             pauseButton.gameObject.SetActive(false);
             swipeText.gameObject.SetActive(true);
+            scoreText.gameObject.SetActive(false);
             playerCanvasAnim.SetBool("isBlinking", true);
         }
     }
@@ -72,6 +73,7 @@ public class PlayerUI : MonoBehaviour
             isTutorial = false;
             swipeText.gameObject.SetActive(false);
             pauseButton.gameObject.SetActive(true);
+            scoreText.gameObject.SetActive(true);
             PlayerPrefs.SetInt("FIRSTTIMEOPENING", 100);
         }
     }
@@ -96,7 +98,8 @@ public class PlayerUI : MonoBehaviour
         pauseScoreText.text = PlayerStats.Score.ToString("000 000 000");
         rb.isKinematic = true;
         playerMovement.enabled = false;
-        pauseButton.gameObject.SetActive(false);
+        scoreText.enabled = false;
+        pauseButton.enabled = false;
         playerMovement.PauseAnim();
     }
 
@@ -105,6 +108,8 @@ public class PlayerUI : MonoBehaviour
     }
 
     IEnumerator ContinueCountdown(){
+        scoreText.enabled = true;
+        
         int i = 3;
         while(i>0){
             continueCountdown.enabled = true;
@@ -115,7 +120,7 @@ public class PlayerUI : MonoBehaviour
         rb.isKinematic = false;
         continueCountdown.enabled = false;
         playerMovement.enabled = true;
-        pauseButton.gameObject.SetActive(true);
+        pauseButton.enabled = true;
         playerMovement.ContinueAnim();
     }
 

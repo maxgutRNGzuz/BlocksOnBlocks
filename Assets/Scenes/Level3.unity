@@ -303,12 +303,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669660968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9193085071889974314, guid: 1185f670599d94241b516676a4d624e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8263745323689746216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &1264680671 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7330805921699379098, guid: a0cadfe3ae56a3248aef493f632eb680,
     type: 3}
   m_PrefabInstance: {fileID: 5052067395357284324}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1382209237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8319870149420032060, guid: 1185f670599d94241b516676a4d624e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8263745323689746216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1651670835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5913842921688769026, guid: 1185f670599d94241b516676a4d624e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8263745323689746216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1705373879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,18 +520,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfc7274bc72326b45b189e481a378164, type: 3}
---- !u!114 &1710340248947548761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5913842921688769026, guid: 1185f670599d94241b516676a4d624e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8263745323689746216}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4335119340748769005 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8756996289371326134, guid: 1185f670599d94241b516676a4d624e8,
@@ -620,9 +644,9 @@ PrefabInstance:
       objectReference: {fileID: 8263745323689746217}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: swipeText
+      propertyPath: warpSpeed
       value: 
-      objectReference: {fileID: 8012853801289739379}
+      objectReference: {fileID: 1264680671}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: speedText
@@ -630,14 +654,14 @@ PrefabInstance:
       objectReference: {fileID: 7084884443872920189}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: levelText
+      propertyPath: scoreText
       value: 
-      objectReference: {fileID: 1710340248947548761}
+      objectReference: {fileID: 8263745323689746218}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: pauseButton
+      propertyPath: swipeText
       value: 
-      objectReference: {fileID: 5021066808652336075}
+      objectReference: {fileID: 8012853801289739379}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: continueCountdown
@@ -645,14 +669,24 @@ PrefabInstance:
       objectReference: {fileID: 4335119340748769005}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: warpSpeed
+      propertyPath: pauseButton
       value: 
-      objectReference: {fileID: 1264680671}
+      objectReference: {fileID: 5021066808652336075}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: scoreText
+      propertyPath: phaseText
       value: 
-      objectReference: {fileID: 8263745323689746218}
+      objectReference: {fileID: 1651670835}
+    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: deathScoreText
+      value: 
+      objectReference: {fileID: 1382209237}
+    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: pauseScoreText
+      value: 
+      objectReference: {fileID: 669660968}
     - target: {fileID: 7637611301746724836, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -713,11 +747,6 @@ PrefabInstance:
       propertyPath: sceneHandler
       value: 
       objectReference: {fileID: 1705373880}
-    - target: {fileID: 7637611301746724838, guid: 1f0d4b754414d454d82b6af0603a4764,
-        type: 3}
-      propertyPath: startSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7637611301746724840, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: m_Name
