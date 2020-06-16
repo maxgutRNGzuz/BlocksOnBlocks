@@ -51,10 +51,15 @@ public class PlatformGenerator : MonoBehaviour
         for (int i = 0; i < platformsOnScene; i++)
         {
             SpawnPlatforms();
-            SpawnConnectors();
+            if(i == 0){
+                SpawnConnectors();
+            }
+            else{
+                SpawnConnectors(Random.Range(0, connectorXSpawnPos.Length));
+            }
         }
 
-        SpawnConnectors();
+        SpawnConnectors(Random.Range(0, connectorXSpawnPos.Length));
     }
 
     
@@ -106,8 +111,7 @@ public class PlatformGenerator : MonoBehaviour
         platformsSpawned ++;
     }
 
-    void SpawnConnectors(){
-        int index = Random.Range(0, connectorXSpawnPos.Length);
+    void SpawnConnectors(int index = 1){
         Vector3 spawnPos = new Vector3(connectorXSpawnPos[index], -1f, currentConnectorSpawnZ);
         GameObject connectorInstance = Instantiate(connector, spawnPos, Quaternion.identity, transform);
         currentConnectorSpawnZ += connectorDistance;
