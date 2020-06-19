@@ -10,13 +10,20 @@ using UnityEngine.SocialPlatforms;
 
 public class MainMenu : MonoBehaviour
 {
+    public static PlayGamesPlatform platform;
+
     [SerializeField] TextMeshProUGUI highscoreText;
+    [SerializeField] TextMeshProUGUI coinsText;
+
     int highscore;
 
     void Start()
-    {        
-        AuthenticatePlayer();
+    {      
+        if(platform == null){
+            AuthenticatePlayer();
+        }
         HandleHighscore();
+        HandleCoins();
     }
 
     void AuthenticatePlayer(){
@@ -29,7 +36,7 @@ public class MainMenu : MonoBehaviour
             }
             else{
                 Debug.LogError("Unable to sign in to Google Play Services");
-                return;
+                //return; !!!!!!!!!!TURN ON AGAIN WHEN BUILDING
             }}
         );
     }
@@ -58,5 +65,13 @@ public class MainMenu : MonoBehaviour
     void ShowLeaderboard(){
         //PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_highscore);
         Social.ShowLeaderboardUI();
+    }
+
+    void HandleCoins(){
+        int oldCoins = PlayerPrefs.GetInt("Coins", 0);
+        int collectedCoins = PlayerStats.Coins;
+
+        PlayerPrefs.SetInt("Coins", oldCoins + collectedCoins);
+        coinsText.text = (oldCoins+collectedCoins).ToString();
     }
 }

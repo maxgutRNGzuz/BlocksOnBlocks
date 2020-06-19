@@ -106,11 +106,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTutorial: 1
+  coins: 0
   playerCanvasAnim: {fileID: 0}
   warpSpeed: {fileID: 0}
   speedText: {fileID: 0}
   phaseText: {fileID: 0}
   scoreText: {fileID: 0}
+  coinText: {fileID: 0}
   swipeText: {fileID: 0}
   tutorialDisplayText:
   - good

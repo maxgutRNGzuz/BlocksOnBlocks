@@ -402,30 +402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10669896707dc0c4bab8b60a8e3bdb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1761439005 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9193085071889974314, guid: 1185f670599d94241b516676a4d624e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8182285914271819797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1779477904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8319870149420032060, guid: 1185f670599d94241b516676a4d624e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 8182285914271819797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &744722757754479946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -647,9 +623,9 @@ PrefabInstance:
       objectReference: {fileID: 966609138}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: swipeText
+      propertyPath: warpSpeed
       value: 
-      objectReference: {fileID: 6355618294454825728}
+      objectReference: {fileID: 6489781858594225236}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: speedText
@@ -657,14 +633,29 @@ PrefabInstance:
       objectReference: {fileID: 6148048884935154958}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: levelText
+      propertyPath: phaseText
       value: 
       objectReference: {fileID: 2358910230741728554}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: pauseButton
+      propertyPath: scoreText
       value: 
-      objectReference: {fileID: 8263745323823617208}
+      objectReference: {fileID: 8182285914271819799}
+    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 8182285914271819798}
+    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: swipeText
+      value: 
+      objectReference: {fileID: 6355618294454825728}
+    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: deathScoreText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: continueCountdown
@@ -672,29 +663,14 @@ PrefabInstance:
       objectReference: {fileID: 804351219680598430}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
-      propertyPath: warpSpeed
+      propertyPath: pauseButton
       value: 
-      objectReference: {fileID: 6489781858594225236}
-    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
-        type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 17616916}
-    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
-        type: 3}
-      propertyPath: phaseText
-      value: 
-      objectReference: {fileID: 2358910230741728554}
-    - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
-        type: 3}
-      propertyPath: deathScoreText
-      value: 
-      objectReference: {fileID: 1779477904}
+      objectReference: {fileID: 8263745323823617208}
     - target: {fileID: 7637611301746724835, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: pauseScoreText
       value: 
-      objectReference: {fileID: 1761439005}
+      objectReference: {fileID: 17616916}
     - target: {fileID: 7637611301746724836, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,16 +767,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 300642427}
-    - target: {fileID: 6254426890135126124, guid: 1185f670599d94241b516676a4d624e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1705373880}
-    - target: {fileID: 6254426891200518930, guid: 1185f670599d94241b516676a4d624e8,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1705373880}
     - target: {fileID: 6900937023712741369, guid: 1185f670599d94241b516676a4d624e8,
         type: 3}
       propertyPath: m_Name
@@ -913,6 +879,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1185f670599d94241b516676a4d624e8, type: 3}
+--- !u!114 &8182285914271819798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8646259067266749870, guid: 1185f670599d94241b516676a4d624e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8182285914271819797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8182285914271819799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5507141892970156863, guid: 1185f670599d94241b516676a4d624e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8182285914271819797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8263745323823617208 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 136301456, guid: 1185f670599d94241b516676a4d624e8,

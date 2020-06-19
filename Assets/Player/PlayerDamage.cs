@@ -34,6 +34,7 @@ public class PlayerDamage : MonoBehaviour
         ParticleSystem deathFXInstance = Instantiate(deathFX, transform.position+deathFXOffset, Quaternion.identity);
         Destroy(deathFXInstance, deathFXInstance.duration);
         PlayerStats.Score = playerMovement.score;
+        PlayerStats.Coins = playerUI.coins;
         playerUI.FadeInDeadScreen();
         gameObject.SetActive(false);
     }

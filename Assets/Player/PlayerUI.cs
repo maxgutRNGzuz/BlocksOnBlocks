@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerUI : MonoBehaviour
 {
     public bool isTutorial = true;
+    public int coins = 0;
 
     [SerializeField] Animator playerCanvasAnim;
     [SerializeField] ParticleSystem warpSpeed;
@@ -15,7 +16,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI speedText;
     [SerializeField] TextMeshProUGUI phaseText;
     [SerializeField] TextMeshProUGUI scoreText;
-    //[SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] TextMeshProUGUI coinText;
 
     [Header("Tutorial")]
     [SerializeField] TextMeshProUGUI swipeText;
@@ -70,12 +71,25 @@ public class PlayerUI : MonoBehaviour
             }
         }
         else if(collider.gameObject.tag == "TutorialEnd"){
-            isTutorial = false;
-            swipeText.gameObject.SetActive(false);
-            pauseButton.gameObject.SetActive(true);
-            scoreText.gameObject.SetActive(true);
-            PlayerPrefs.SetInt("FIRSTTIMEOPENING", 100);
+            EndTutorial();
         }
+        else if(collider.gameObject.tag == "Coin"){
+            UpdateCoins();
+            Destroy(collider.gameObject);
+        }
+    }
+
+    void EndTutorial(){
+        isTutorial = false;
+        swipeText.gameObject.SetActive(false);
+        pauseButton.gameObject.SetActive(true);
+        scoreText.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("FIRSTTIMEOPENING", 100);
+    }
+
+    void UpdateCoins(){
+        coins += 1;
+        coinText.text = coins.ToString();
     }
 
     public void UpdateSpeedText(float speed, bool isMaxSpeed){
@@ -95,11 +109,13 @@ public class PlayerUI : MonoBehaviour
 
     public void Pause(){
         PlayerStats.Score = playerMovement.score;
+        PlayerStats.Coins = coins;
         pauseScoreText.text = PlayerStats.Score.ToString("000 000 000");
         rb.isKinematic = true;
         playerMovement.enabled = false;
         scoreText.enabled = false;
         pauseButton.enabled = false;
+        coinText.enabled = false;
         playerMovement.PauseAnim();
     }
 
@@ -109,6 +125,7 @@ public class PlayerUI : MonoBehaviour
 
     IEnumerator ContinueCountdown(){
         scoreText.enabled = true;
+        coinText.enabled = true;
         
         int i = 3;
         while(i>0){

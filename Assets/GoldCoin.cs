@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class GoldCoin : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed;
+    [SerializeField] float minRotationSpeed;
+    [SerializeField] float maxRotationSpeed;
 
-    void Start()
-    {
-        
+    float rotationSpeed;
+
+    void Start(){
+        rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed);
     }
-
     
     void FixedUpdate()
     {
-        transform.Rotate(0f,0f,rotationSpeed*Time.fixedDeltaTime);
+        transform.Rotate(0f,0f,-rotationSpeed * Time.fixedDeltaTime);
     }
 }
