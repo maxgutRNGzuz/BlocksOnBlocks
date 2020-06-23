@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] GameObject player;
+    [SerializeField] Material vantablack;
+
+    Renderer renderer;
+
+    void Start(){
+        renderer = player.GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ApplyVantablack(){
+        renderer.material = vantablack;
     }
 }
