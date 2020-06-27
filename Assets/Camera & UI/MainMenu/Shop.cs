@@ -1,19 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] Material vantablack;
+    [SerializeField] TextMeshProUGUI coinsText;
 
-    Renderer renderer;
+    int coins;
 
-    void Start(){
-        renderer = player.GetComponent<Renderer>();
+    ShopItem[] shopItems;
+
+    void Awake() {
+        PlayerPrefs.SetInt("Coins", 5000);
     }
 
-    public void ApplyVantablack(){
-        renderer.material = vantablack;
+    void Start(){
+        shopItems = GetComponentsInChildren<ShopItem>();
+        coins = PlayerPrefs.GetInt("Coins", 0);
+        coinsText.text = coins.ToString();
+    }
+
+    public void UpdateCoins(){
+        coins = PlayerPrefs.GetInt("Coins", 0);
+        coinsText.text = coins.ToString();
     }
 }
