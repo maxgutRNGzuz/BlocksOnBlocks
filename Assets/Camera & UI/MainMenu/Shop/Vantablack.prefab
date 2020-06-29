@@ -899,17 +899,17 @@ MonoBehaviour:
   purchase: {fileID: 9136784782047515797}
   select: {fileID: 1947249679}
   selected: {fileID: 858697601}
+  material: {fileID: 2100000, guid: 0a65027053d41ce4e8e69e23e8a7c189, type: 2}
   playerPrefab: {fileID: 7637611301746724840, guid: 1f0d4b754414d454d82b6af0603a4764,
     type: 3}
   playerInstance: {fileID: 0}
+  deathFXRenderer: {fileID: 1094639026331581481, guid: 192c7d9106d4ff745a42b41c4d900231,
+    type: 3}
   shop: {fileID: 0}
   nameText: {fileID: 9136784781222277252}
   name: VantaBlack
   costText: {fileID: 9136784781618105035}
   cost: 1000
-  material: {fileID: 2100000, guid: 0a65027053d41ce4e8e69e23e8a7c189, type: 2}
-  deathFXRenderer: {fileID: 1094639026331581481, guid: 192c7d9106d4ff745a42b41c4d900231,
-    type: 3}
 --- !u!1 &9136784782321030613
 GameObject:
   m_ObjectHideFlags: 0

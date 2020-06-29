@@ -6,31 +6,33 @@ using TMPro;
 public class ShopItem : MonoBehaviour {
 
     public enum ButtonStates{notPurchased = 0, notSelected = 1, selected = 2};
-    public static ButtonStates currentState;
+    public ButtonStates currentState;
     public GameObject purchase;
     public GameObject select;
     public GameObject selected;
+    public Material material;
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject playerInstance;
+    [SerializeField] Renderer deathFXRenderer;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] string name;
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] int cost;
-    [SerializeField] Material material;
 
+    ShopItem[] shopItems;
     Renderer prefabRenderer;
     Renderer instanceRenderer;
-    [SerializeField] Renderer deathFXRenderer;
     int coins;
 
     void Start() {
+        shopItems = FindObjectsOfType<ShopItem>();
         prefabRenderer = playerPrefab.GetComponentInChildren<Renderer>();
         instanceRenderer = playerInstance.GetComponentInChildren<Renderer>();
         coins = PlayerPrefs.GetInt("Coins", 0);
         nameText.text = name;
-        if(PlayerItems.ShopItems[name] == null){
+        if(!PlayerItems.ShopItems.ContainsKey(name)){
             PlayerItems.ShopItems.Add(name, (int)currentState);
         }
         CheckButtonState();
@@ -38,6 +40,19 @@ public class ShopItem : MonoBehaviour {
     }
 
     void CheckButtonState(){
+        // for (int i = 0; i < shopItems.Length; i++)
+        // {
+        //     if(shopItems[i].material == playerInstance.renderer){
+        //         shopItems[i].currentState = ButtonStates.selected;
+
+        //         if(purchase){
+        //             purchase.SetActive(false);
+        //         }
+        //         select.SetActive(false);
+        //         selected.SetActive(true);
+        //     }
+        // }
+        if(instanceRenderer.material)
         print(PlayerItems.ShopItems[name]);
         if(PlayerItems.ShopItems[name] == (int)ButtonStates.notPurchased){
             if(purchase){
@@ -96,6 +111,7 @@ public class ShopItem : MonoBehaviour {
         select.SetActive(false);
         selected.SetActive(true);
         currentState = ButtonStates.selected;
+        PlayerItems.ShopItems[name] = (int)ButtonStates.selected;
     }
 
     void ChangeColor(){
@@ -105,16 +121,18 @@ public class ShopItem : MonoBehaviour {
     }
 
     void UnselectOtherItems(){
-        foreach (KeyValuePair <string, int> item in PlayerItems.ShopItems)
-            {
-                if(item.Value == (int)ButtonStates.selected){
-                    item.Value = (int)ButtonStates.notSelected;
-                    if(item.purchase){
-                        item.purchase.SetActive(false);
-                    }
-                    item.select.SetActive(true);
-                    item.selected.SetActive(false);
+        for (int i = 0; i < shopItems.Length; i++)
+        {
+            if(shopItems[i].currentState == ButtonStates.selected){
+                shopItems[i].currentState = ButtonStates.notSelected;
+                PlayerItems.ShopItems[shopItems[i].name] = (int)ButtonStates.notSelected;
+                if(shopItems[i].purchase){
+                    shopItems[i].purchase.SetActive(false);
                 }
-            }   
+                shopItems[i].select.SetActive(true);
+                shopItems[i].selected.SetActive(false);
+            }
+
+        }  
     }
 }

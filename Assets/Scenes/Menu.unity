@@ -3111,7 +3111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218310914523634350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94622c5b0eeb5a479256f0deb421dfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d445ae934bc255459fc5ca00cd0aae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1802427393}
