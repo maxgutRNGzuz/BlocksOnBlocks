@@ -1,8 +1,8 @@
 ﻿public static class PlayerStats
 {
-    public static int phase = 1;
-    public static int score;
-    public static int coins;
+    static int phase = 1;
+    static int score;
+    static int coins;
 
     public static int Phase{
         get{
