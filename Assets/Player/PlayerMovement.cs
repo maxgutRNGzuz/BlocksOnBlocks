@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float bodyYScale = 1f;
 
     PlayerUI playerUI;
-    //EndPlatform endPlatform;
     Rigidbody rb;
     Touch touch;
     Vector3 touchPos;
@@ -28,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponentInChildren<Rigidbody>();
         currentSpeed = startSpeed;
         score = PlayerStats.Score;
+        print(PlayerItems.PurchasedItems.Count);
+        foreach (ShopItem item in PlayerItems.PurchasedItems){
+            print(item);
+        }
     }
 
     void FixedUpdate(){

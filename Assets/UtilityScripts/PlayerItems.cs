@@ -2,16 +2,17 @@
 
 public static class PlayerItems
 {
-    //static List<ShopItem> shopItems = new List<ShopItem>();
-    static Dictionary<string, int> shopItems = new Dictionary<string, int>();
+    public static List<ShopItem> PurchasedItems = new List<ShopItem>();
 
-    public static Dictionary<string, int> ShopItems{
-        get{
-            return shopItems;
-        }
-        set{
-            shopItems = value;
-        }
-    }
+    public static bool a = true;
+
+    // public static List<ShopItem> PurchasedItems{
+    //     get{
+    //         return purchasedItems;
+    //     }
+    //     set{
+    //         purchasedItems = value;
+    //     }
+    // }
 
 }

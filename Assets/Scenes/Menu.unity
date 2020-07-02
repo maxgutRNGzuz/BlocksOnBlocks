@@ -1226,6 +1226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7637611301746724840, guid: 1f0d4b754414d454d82b6af0603a4764,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7637611301976392571, guid: 1f0d4b754414d454d82b6af0603a4764,
         type: 3}
       propertyPath: m_Enabled
@@ -2486,61 +2491,6 @@ PrefabInstance:
       propertyPath: material
       value: 
       objectReference: {fileID: 2100000, guid: 20b60d2999eeb7a458b803b6973f8328, type: 2}
-    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.23137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.7372549
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.827451
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781222277252, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781222277252, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781222277252, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781222277252, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781618105035, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781618105035, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781618105035, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9136784781618105035, guid: 1f4807e905583844aad1015227ba71cd,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9136784782174398095, guid: 1f4807e905583844aad1015227ba71cd,
         type: 3}
       propertyPath: m_Name
@@ -2751,7 +2701,7 @@ PrefabInstance:
     - target: {fileID: 21268564384612628, guid: 07a581e0eef71f74f910305cea095541,
         type: 3}
       propertyPath: m_Name
-      value: Alpinwhite
+      value: Alpinewhite
       objectReference: {fileID: 0}
     - target: {fileID: 21268564384612629, guid: 07a581e0eef71f74f910305cea095541,
         type: 3}
@@ -4379,6 +4329,21 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1218310914523634352}
+    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136784781097581926, guid: 1f4807e905583844aad1015227ba71cd,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9136784782174398095, guid: 1f4807e905583844aad1015227ba71cd,
         type: 3}
       propertyPath: m_Name

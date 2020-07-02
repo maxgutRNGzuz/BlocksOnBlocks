@@ -55,17 +55,17 @@ MonoBehaviour:
   purchase: {fileID: 0}
   select: {fileID: 21268565803441393}
   selected: {fileID: 21268565418339689}
+  material: {fileID: 2100000, guid: 394c7bf4a3586f94eaac6bd13dd3ab4c, type: 2}
   playerPrefab: {fileID: 7637611301746724840, guid: 1f0d4b754414d454d82b6af0603a4764,
     type: 3}
   playerInstance: {fileID: 0}
-  shop: {fileID: 0}
-  nameText: {fileID: 21268564519462371}
-  name: Alpinwhite
-  costText: {fileID: 0}
-  cost: 0
-  material: {fileID: 2100000, guid: 394c7bf4a3586f94eaac6bd13dd3ab4c, type: 2}
   deathFXRenderer: {fileID: 1094639026331581481, guid: 192c7d9106d4ff745a42b41c4d900231,
     type: 3}
+  shop: {fileID: 0}
+  nameText: {fileID: 21268564519462371}
+  name: Alpinewhite
+  costText: {fileID: 0}
+  cost: 0
 --- !u!1 &21268564519462369
 GameObject:
   m_ObjectHideFlags: 0
