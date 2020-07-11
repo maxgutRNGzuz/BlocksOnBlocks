@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ShopItem : MonoBehaviour {
+public class EnvironmentItem : MonoBehaviour {
 
     public enum ButtonStates{notPurchased = 0, notSelected = 1, selected = 2};
     public ButtonStates currentState;
@@ -12,35 +12,28 @@ public class ShopItem : MonoBehaviour {
     public GameObject selected;
     public Material material;
 
-    [SerializeField] GameObject playerPrefab;
-    [SerializeField] GameObject playerInstance;
-    [SerializeField] Renderer deathFXRenderer;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] string name;
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] int cost;
 
-    MeshRenderer prefabRenderer;
-    MeshRenderer instanceRenderer;
     int coins;
     int index;
 
     void Start() {
-        prefabRenderer = playerPrefab.GetComponentInChildren<MeshRenderer>();
-        instanceRenderer = playerInstance.GetComponentInChildren<MeshRenderer>();
         coins = PlayerPrefs.GetInt("Coins", 0);
         nameText.text = name;
-        index = shop.playerItems.IndexOf(this);
+        index = shop.environmentItems.IndexOf(this);
 
-        if(name == "Alpinewhite" && shop.purchasedPlayerItems.Contains(index) == false){
-            shop.purchasedPlayerItems.Add(index);
+        if(name == "Alpinewhite" && shop.purchasedEnvironmentItems.Contains(index) == false){
+            shop.purchasedEnvironmentItems.Add(index);
         }
         CheckButtonState();  
     }
 
     void CheckButtonState(){
-        if(shop.purchasedPlayerItems.Contains(index) == true){    
+        if(shop.purchasedEnvironmentItems.Contains(index) == true){    
             print(index);     
             if(this.material.color == instanceRenderer.material.color){
                 currentState = ButtonStates.selected;
@@ -51,7 +44,7 @@ public class ShopItem : MonoBehaviour {
                 selected.SetActive(true);
             }
             else{
-                if(shop.purchasedPlayerItems.Contains(index)){
+                if(shop.purchasedEnvironmentItems.Contains(index)){
                         currentState = ButtonStates.notSelected;
                         if(purchase){
                             purchase.SetActive(false);
@@ -79,7 +72,7 @@ public class ShopItem : MonoBehaviour {
     void PurchaseItem(){
         if(coins >= cost){
             shop.UpdateCoins(-cost);
-            shop.purchasedPlayerItems.Add(index);
+            shop.purchasedEnvironmentItems.Add(index);
             shop.SavePlayer();
         }
         else{
@@ -100,13 +93,10 @@ public class ShopItem : MonoBehaviour {
     }
 
     void ChangeColor(){
-        prefabRenderer.material = this.material;
-        instanceRenderer.material = this.material;
-        deathFXRenderer.material = this.material;
     }
 
     void UnselectOtherItems(){
-        foreach (ShopItem item in shop.playerItems)
+        foreach (EnvironmentItem item in shop.environmentItems)
         {
             if(item.currentState == ButtonStates.selected){
                 item.currentState = ButtonStates.notSelected;
