@@ -10,7 +10,9 @@ public class EnvironmentItem : MonoBehaviour {
     public GameObject purchase;
     public GameObject select;
     public GameObject selected;
-    public Material material;
+    [SerializeField] string[] keys;
+    [SerializeField] Material[] values;
+    public Dictionary<string, Material> materials = new Dictionary<string, Material>();
 
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
@@ -32,16 +34,29 @@ public class EnvironmentItem : MonoBehaviour {
         CheckButtonState();  
     }
 
+    void SetUpDictionary(){
+        if(keys.Length != values.Length){
+            Debug.LogError("keys.Length != values.Length");
+            return;
+        }
+        for (int i = 0; i < values.Length; i++)
+        {
+            materials.Add(keys[i], values[i]);
+        }
+    }
+
     void CheckButtonState(){
         if(shop.purchasedEnvironmentItems.Contains(index) == true){    
-            print(index);     
-            if(this.material.color == instanceRenderer.material.color){
-                currentState = ButtonStates.selected;
-                if(purchase){
-                    purchase.SetActive(false);
-                }
-                select.SetActive(false);
-                selected.SetActive(true);
+            // if(this.material.color == instanceRenderer.material.color){
+            //     currentState = ButtonStates.selected;
+            //     if(purchase){
+            //         purchase.SetActive(false);
+            //     }
+            //     select.SetActive(false);
+            //     selected.SetActive(true);
+            // }
+            if(index == -1){
+
             }
             else{
                 if(shop.purchasedEnvironmentItems.Contains(index)){
