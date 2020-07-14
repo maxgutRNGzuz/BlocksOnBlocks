@@ -35,8 +35,7 @@ public class PlayerItem : MonoBehaviour {
     }
 
     void CheckButtonState(){
-        if(shop.purchasedPlayerItems.Contains(index) == true){    
-            print(index);     
+        if(shop.purchasedPlayerItems.Contains(index) == true){      
             if(myMaterial.color == playerMaterial.color){
                 currentState = ButtonStates.selected;
                 if(purchase){
@@ -46,14 +45,12 @@ public class PlayerItem : MonoBehaviour {
                 selected.SetActive(true);
             }
             else{
-                if(shop.purchasedPlayerItems.Contains(index)){
-                        currentState = ButtonStates.notSelected;
-                        if(purchase){
-                            purchase.SetActive(false);
-                        }
-                        select.SetActive(true);
-                        selected.SetActive(false);
+                currentState = ButtonStates.notSelected;
+                if(purchase){
+                    purchase.SetActive(false);
                 }
+                select.SetActive(true);
+                selected.SetActive(false);
             }
         }
     }

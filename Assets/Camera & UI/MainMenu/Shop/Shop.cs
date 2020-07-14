@@ -59,5 +59,6 @@ public class Shop : MonoBehaviour
     public void LoadPlayer(){ //make private when not used as a button event
         PlayerData data = SaveSystem.LoadPlayer();
         purchasedPlayerItems = data.purchasedPlayerItems.ToList();
+        purchasedPlatformItems = data.purchasedPlatformItems.ToList();
     }
 }

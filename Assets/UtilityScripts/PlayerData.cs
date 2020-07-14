@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerData
 {
     public int[] purchasedPlayerItems;
+    public int[] purchasedPlatformItems;
 
     public PlayerData(Shop shop){
         purchasedPlayerItems = shop.purchasedPlayerItems.ToArray();
+        purchasedPlatformItems = shop.purchasedPlatformItems.ToArray();
     }
 }

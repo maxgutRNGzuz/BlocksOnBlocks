@@ -36,11 +36,12 @@ public class PlatformItem : MonoBehaviour {
         }
         index = shop.platformItems.IndexOf(this);
 
+        SetUpDictionary();
+
         if(isDefault && shop.purchasedPlatformItems.Contains(index) == false){
             shop.purchasedPlatformItems.Add(index);
         }
-        //CheckButtonState();  
-        SetUpDictionary();
+        CheckButtonState();  
     }
 
     void SetUpDictionary(){
@@ -56,27 +57,26 @@ public class PlatformItem : MonoBehaviour {
     }
 
     void CheckButtonState(){
-        if(shop.purchasedPlatformItems.Contains(index) == true){    
-            // if(this.material.color == instanceRenderer.material.color){
-            //     currentState = ButtonStates.selected;
-            //     if(purchase){
-            //         purchase.SetActive(false);
-            //     }
-            //     select.SetActive(false);
-            //     selected.SetActive(true);
-            // }
-            if(index == -1){
-
-            }
-            else{
-                if(shop.purchasedPlatformItems.Contains(index)){
-                        currentState = ButtonStates.notSelected;
-                        if(purchase){
-                            purchase.SetActive(false);
-                        }
-                        select.SetActive(true);
-                        selected.SetActive(false);
+        if(shop.purchasedPlatformItems.Contains(index) == true){   
+            print(platformMaterials[keys[0]].color);
+            print(myMaterials[keys[0]].color);
+            print(platformMaterials[keys[0]].color == myMaterials[keys[0]].color);
+            if(platformMaterials[keys[0]].color == myMaterials[keys[0]].color){ // just checks 1 material 
+            print("yayay");
+                currentState = ButtonStates.selected;
+                if(purchase){
+                    purchase.SetActive(false);
                 }
+                select.SetActive(false);
+                selected.SetActive(true);
+            } 
+            else{
+                currentState = ButtonStates.notSelected;
+                if(purchase){
+                    purchase.SetActive(false);
+                }
+                select.SetActive(true);
+                selected.SetActive(false);
             }
         }
     }
