@@ -55,12 +55,9 @@ MonoBehaviour:
   purchase: {fileID: 0}
   select: {fileID: 21268565803441393}
   selected: {fileID: 21268565418339689}
-  material: {fileID: 2100000, guid: 394c7bf4a3586f94eaac6bd13dd3ab4c, type: 2}
-  playerPrefab: {fileID: 7637611301746724840, guid: 1f0d4b754414d454d82b6af0603a4764,
-    type: 3}
-  playerInstance: {fileID: 0}
-  deathFXRenderer: {fileID: 1094639026331581481, guid: 192c7d9106d4ff745a42b41c4d900231,
-    type: 3}
+  myMaterial: {fileID: 2100000, guid: 394c7bf4a3586f94eaac6bd13dd3ab4c, type: 2}
+  playerMaterial: {fileID: 2100000, guid: 2cabb5a7c7d6ad84084ccf3754422c24, type: 2}
+  isDefault: 1
   shop: {fileID: 0}
   nameText: {fileID: 21268564519462371}
   name: Alpinewhite
@@ -100,8 +97,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 54.5, y: 43}
-  m_SizeDelta: {x: -171.43, y: -86}
+  m_AnchoredPosition: {x: 69.760025, y: 36.7}
+  m_SizeDelta: {x: -139.52, y: -73.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &21268564519462380
 CanvasRenderer:
@@ -259,7 +256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 29.209991, y: -20.2}
+  m_AnchoredPosition: {x: 18.520004, y: -16.604998}
   m_SizeDelta: {x: -242, y: -120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &21268564831292156

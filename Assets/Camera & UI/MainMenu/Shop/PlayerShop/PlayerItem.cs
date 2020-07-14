@@ -10,30 +10,25 @@ public class PlayerItem : MonoBehaviour {
     public GameObject purchase;
     public GameObject select;
     public GameObject selected;
-    public Material material;
+    public Material myMaterial;
+    [SerializeField] Material playerMaterial;
 
-    [SerializeField] GameObject playerPrefab;
-    [SerializeField] GameObject playerInstance;
-    [SerializeField] Renderer deathFXRenderer;
+    [SerializeField] bool isDefault = false;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] string name;
     [SerializeField] TextMeshProUGUI costText;
     [SerializeField] int cost;
 
-    MeshRenderer prefabRenderer;
-    MeshRenderer instanceRenderer;
     int coins;
     int index;
 
     void Start() {
-        prefabRenderer = playerPrefab.GetComponentInChildren<MeshRenderer>();
-        instanceRenderer = playerInstance.GetComponentInChildren<MeshRenderer>();
-        coins = PlayerPrefs.GetInt("Coins", 0);
         nameText.text = name;
+        costText.text = cost.ToString();
         index = shop.playerItems.IndexOf(this);
 
-        if(name == "Alpinewhite" && shop.purchasedPlayerItems.Contains(index) == false){
+        if(isDefault && shop.purchasedPlayerItems.Contains(index) == false){
             shop.purchasedPlayerItems.Add(index);
         }
         CheckButtonState();  
@@ -42,7 +37,7 @@ public class PlayerItem : MonoBehaviour {
     void CheckButtonState(){
         if(shop.purchasedPlayerItems.Contains(index) == true){    
             print(index);     
-            if(this.material.color == instanceRenderer.material.color){
+            if(myMaterial.color == playerMaterial.color){
                 currentState = ButtonStates.selected;
                 if(purchase){
                     purchase.SetActive(false);
@@ -65,8 +60,14 @@ public class PlayerItem : MonoBehaviour {
 
     public void OnButtonPress(){
         if(currentState == ButtonStates.notPurchased){
-            PurchaseItem();
-            SelectItem();
+            coins = PlayerPrefs.GetInt("Coins", 0);
+            if(coins >= cost){
+                PurchaseItem();
+                SelectItem();
+            }
+            else{
+                print("Not enough coins for this purchase");
+            }
         }
         else if (currentState == ButtonStates.notSelected){
             SelectItem();
@@ -77,14 +78,9 @@ public class PlayerItem : MonoBehaviour {
     }
 
     void PurchaseItem(){
-        if(coins >= cost){
-            shop.UpdateCoins(-cost);
-            shop.purchasedPlayerItems.Add(index);
-            shop.SavePlayer();
-        }
-        else{
-            print("Not enough coins for this purchase");
-        }
+        shop.UpdateCoins(-cost);
+        shop.purchasedPlayerItems.Add(index);
+        shop.SavePlayer();
     }
 
     void SelectItem(){
@@ -100,9 +96,9 @@ public class PlayerItem : MonoBehaviour {
     }
 
     void ChangeColor(){
-        prefabRenderer.material = this.material;
-        instanceRenderer.material = this.material;
-        deathFXRenderer.material = this.material;
+        playerMaterial.color = myMaterial.color;
+        playerMaterial.SetFloat("_Metallic", myMaterial.GetFloat("_Metallic"));
+        playerMaterial.SetFloat("_Glossiness", myMaterial.GetFloat("_Glossiness"));
     }
 
     void UnselectOtherItems(){

@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class EnvironmentItem : MonoBehaviour {
+public class PlatformItem : MonoBehaviour {
 
     public enum ButtonStates{notPurchased = 0, notSelected = 1, selected = 2};
     public ButtonStates currentState;
     public GameObject purchase;
     public GameObject select;
     public GameObject selected;
-    [SerializeField] string[] keys;
-    [SerializeField] Material[] values;
-    public Dictionary<string, Material> materials = new Dictionary<string, Material>();
 
+    [Header("Materials")]
+    string[] keys = new string[] {"Ground", "Lanes", "Obstacle", "Arrow", "Stopper", "EndGrid", "EndArrow"};
+    [SerializeField] Material[] _myMaterials;
+    public Dictionary<string, Material> myMaterials = new Dictionary<string, Material>();
+    [SerializeField] Material[] _platformMaterials;
+    public Dictionary<string, Material> platformMaterials = new Dictionary<string, Material>();
+    [SerializeField] Texture endGridTexture;
+
+    [SerializeField] bool isDefault = false;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] string name;
@@ -24,29 +30,33 @@ public class EnvironmentItem : MonoBehaviour {
     int index;
 
     void Start() {
-        coins = PlayerPrefs.GetInt("Coins", 0);
         nameText.text = name;
-        index = shop.environmentItems.IndexOf(this);
-
-        if(name == "Alpinewhite" && shop.purchasedEnvironmentItems.Contains(index) == false){
-            shop.purchasedEnvironmentItems.Add(index);
+        if(!isDefault){
+            costText.text = cost.ToString();
         }
-        CheckButtonState();  
+        index = shop.platformItems.IndexOf(this);
+
+        if(isDefault && shop.purchasedPlatformItems.Contains(index) == false){
+            shop.purchasedPlatformItems.Add(index);
+        }
+        //CheckButtonState();  
+        SetUpDictionary();
     }
 
     void SetUpDictionary(){
-        if(keys.Length != values.Length){
-            Debug.LogError("keys.Length != values.Length");
+        if(keys.Length != _myMaterials.Length || keys.Length != _platformMaterials.Length){
+            Debug.LogError("keys.Length != _myMaterials.Length || keys.Length != _platformMaterials.Length");
             return;
         }
-        for (int i = 0; i < values.Length; i++)
+        for (int i = 0; i < _myMaterials.Length; i++)
         {
-            materials.Add(keys[i], values[i]);
+            myMaterials.Add(keys[i], _myMaterials[i]);
+            platformMaterials.Add(keys[i], _platformMaterials[i]);
         }
     }
 
     void CheckButtonState(){
-        if(shop.purchasedEnvironmentItems.Contains(index) == true){    
+        if(shop.purchasedPlatformItems.Contains(index) == true){    
             // if(this.material.color == instanceRenderer.material.color){
             //     currentState = ButtonStates.selected;
             //     if(purchase){
@@ -59,7 +69,7 @@ public class EnvironmentItem : MonoBehaviour {
 
             }
             else{
-                if(shop.purchasedEnvironmentItems.Contains(index)){
+                if(shop.purchasedPlatformItems.Contains(index)){
                         currentState = ButtonStates.notSelected;
                         if(purchase){
                             purchase.SetActive(false);
@@ -73,8 +83,14 @@ public class EnvironmentItem : MonoBehaviour {
 
     public void OnButtonPress(){
         if(currentState == ButtonStates.notPurchased){
-            PurchaseItem();
-            SelectItem();
+            coins = PlayerPrefs.GetInt("Coins", 0);
+            if(coins >= cost){
+                PurchaseItem();
+                SelectItem();
+            }
+            else{
+                print("Not enough coins for this purchase");
+            }
         }
         else if (currentState == ButtonStates.notSelected){
             SelectItem();
@@ -85,14 +101,9 @@ public class EnvironmentItem : MonoBehaviour {
     }
 
     void PurchaseItem(){
-        if(coins >= cost){
-            shop.UpdateCoins(-cost);
-            shop.purchasedEnvironmentItems.Add(index);
-            shop.SavePlayer();
-        }
-        else{
-            print("Not enough coins for this purchase");
-        }
+        shop.UpdateCoins(-cost);
+        shop.purchasedPlatformItems.Add(index);
+        shop.SavePlayer();
     }
 
     void SelectItem(){
@@ -108,10 +119,21 @@ public class EnvironmentItem : MonoBehaviour {
     }
 
     void ChangeColor(){
+        foreach (string key in keys)
+        {
+            if(key != "EndGrid"){
+                platformMaterials[key].color = myMaterials[key].color;
+            }
+            else{
+                platformMaterials[key].SetTexture("_MainTex", endGridTexture);
+            }
+            platformMaterials[key].SetFloat("_Metallic", myMaterials[key].GetFloat("_Metallic"));
+            platformMaterials[key].SetFloat("_Glossiness", myMaterials[key].GetFloat("_Glossiness"));
+        }
     }
 
     void UnselectOtherItems(){
-        foreach (EnvironmentItem item in shop.environmentItems)
+        foreach (PlatformItem item in shop.platformItems)
         {
             if(item.currentState == ButtonStates.selected){
                 item.currentState = ButtonStates.notSelected;

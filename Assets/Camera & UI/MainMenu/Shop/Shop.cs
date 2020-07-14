@@ -10,8 +10,8 @@ public class Shop : MonoBehaviour
     public List<PlayerItem> playerItems = new List<PlayerItem>();
     [HideInInspector] public List<int> purchasedPlayerItems = new List<int>();
 
-    public List<EnvironmentItem> environmentItems = new List<EnvironmentItem>();
-    [HideInInspector] public List<int> purchasedEnvironmentItems = new List<int>();
+    public List<PlatformItem> platformItems = new List<PlatformItem>();
+    [HideInInspector] public List<int> purchasedPlatformItems = new List<int>();
 
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject[] shopCategories;
