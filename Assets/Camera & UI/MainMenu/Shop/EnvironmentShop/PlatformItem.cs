@@ -7,9 +7,9 @@ public class PlatformItem : MonoBehaviour {
 
     public enum ButtonStates{notPurchased = 0, notSelected = 1, selected = 2};
     public ButtonStates currentState;
-    public GameObject purchase;
-    public GameObject select;
-    public GameObject selected;
+    [SerializeField] GameObject purchase;
+    [SerializeField] GameObject select;
+    [SerializeField] GameObject selected;
 
     [Header("Materials")]
     string[] keys = new string[] {"Ground", "Lanes", "Obstacle", "Arrow", "Stopper", "EndGrid", "EndArrow"};
@@ -36,7 +36,7 @@ public class PlatformItem : MonoBehaviour {
         }
         index = shop.platformItems.IndexOf(this);
 
-        SetUpDictionary();
+        SetUpDictionaries();
 
         if(isDefault && shop.purchasedPlatformItems.Contains(index) == false){
             shop.purchasedPlatformItems.Add(index);
@@ -44,7 +44,7 @@ public class PlatformItem : MonoBehaviour {
         CheckButtonState();  
     }
 
-    void SetUpDictionary(){
+    void SetUpDictionaries(){
         if(keys.Length != _myMaterials.Length || keys.Length != _platformMaterials.Length){
             Debug.LogError("keys.Length != _myMaterials.Length || keys.Length != _platformMaterials.Length");
             return;
@@ -58,11 +58,7 @@ public class PlatformItem : MonoBehaviour {
 
     void CheckButtonState(){
         if(shop.purchasedPlatformItems.Contains(index) == true){   
-            print(platformMaterials[keys[0]].color);
-            print(myMaterials[keys[0]].color);
-            print(platformMaterials[keys[0]].color == myMaterials[keys[0]].color);
             if(platformMaterials[keys[0]].color == myMaterials[keys[0]].color){ // just checks 1 material 
-            print("yayay");
                 currentState = ButtonStates.selected;
                 if(purchase){
                     purchase.SetActive(false);

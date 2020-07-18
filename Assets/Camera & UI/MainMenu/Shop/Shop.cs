@@ -8,7 +8,7 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     public List<PlayerItem> playerItems = new List<PlayerItem>();
-    [HideInInspector] public List<int> purchasedPlayerItems = new List<int>();
+    /*[HideInInspector]*/ public List<int> purchasedPlayerItems = new List<int>();
 
     public List<PlatformItem> platformItems = new List<PlatformItem>();
     [HideInInspector] public List<int> purchasedPlatformItems = new List<int>();
@@ -19,17 +19,13 @@ public class Shop : MonoBehaviour
     
     int coins;
 
-    void Awake() {
-        PlayerPrefs.SetInt("Coins", 5000);
-    }
-
     void Start(){
+        PlayerPrefs.SetInt("Coins", 5000);
         coins = PlayerPrefs.GetInt("Coins", 0);
         coinsText.text = coins.ToString();
         if(shopCategories.Length != borders.Length){
             Debug.LogError("shopCategories.Length != borders.Length");
         }
-        //LoadPlayer();
     }
 
     public void UpdateCoins(int amount){

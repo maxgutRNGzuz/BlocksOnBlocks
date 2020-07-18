@@ -7,10 +7,10 @@ public class PlayerItem : MonoBehaviour {
 
     public enum ButtonStates{notPurchased = 0, notSelected = 1, selected = 2};
     public ButtonStates currentState;
-    public GameObject purchase;
-    public GameObject select;
-    public GameObject selected;
-    public Material myMaterial;
+    [SerializeField] GameObject purchase;
+    [SerializeField] GameObject select;
+    [SerializeField] GameObject selected;
+    [SerializeField] Material myMaterial;
     [SerializeField] Material playerMaterial;
 
     [SerializeField] bool isDefault = false;
@@ -25,8 +25,12 @@ public class PlayerItem : MonoBehaviour {
 
     void Start() {
         nameText.text = name;
-        costText.text = cost.ToString();
+        if(!isDefault){
+            costText.text = cost.ToString();
+        }
         index = shop.playerItems.IndexOf(this);
+        if(index == 0)
+        print(index);
 
         if(isDefault && shop.purchasedPlayerItems.Contains(index) == false){
             shop.purchasedPlayerItems.Add(index);
@@ -37,6 +41,7 @@ public class PlayerItem : MonoBehaviour {
     void CheckButtonState(){
         if(shop.purchasedPlayerItems.Contains(index) == true){      
             if(myMaterial.color == playerMaterial.color){
+                print("no");
                 currentState = ButtonStates.selected;
                 if(purchase){
                     purchase.SetActive(false);
