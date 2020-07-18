@@ -8,10 +8,13 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     public List<PlayerItem> playerItems = new List<PlayerItem>();
-    /*[HideInInspector]*/ public List<int> purchasedPlayerItems = new List<int>();
+    [HideInInspector] public List<int> purchasedPlayerItems = new List<int>();
 
     public List<PlatformItem> platformItems = new List<PlatformItem>();
     [HideInInspector] public List<int> purchasedPlatformItems = new List<int>();
+
+    public List<BottomItem> bottomItems = new List<BottomItem>();
+    [HideInInspector] public List<int> purchasedBottomItems = new List<int>();
 
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject[] shopCategories;
@@ -56,5 +59,6 @@ public class Shop : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         purchasedPlayerItems = data.purchasedPlayerItems.ToList();
         purchasedPlatformItems = data.purchasedPlatformItems.ToList();
+
     }
 }

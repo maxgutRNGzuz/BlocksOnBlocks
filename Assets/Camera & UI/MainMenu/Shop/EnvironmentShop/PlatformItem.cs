@@ -19,6 +19,7 @@ public class PlatformItem : MonoBehaviour {
     public Dictionary<string, Material> platformMaterials = new Dictionary<string, Material>();
     [SerializeField] Texture endGridTexture;
 
+    [Header("StandartForAllItems")]
     [SerializeField] bool isDefault = false;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;

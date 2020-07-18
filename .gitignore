@@ -66,3 +66,60 @@ Assets/AppPicture.PNG.meta
 BlocksOnBlocksUnity/
 *.aab
 *.cubemap
+Assets/Sample/Materials/dirt_steel_1.mat
+Assets/Sample/Materials/dirt_steel_1.mat.meta
+Assets/Sample/Materials/dirt_steel_2.mat
+Assets/Sample/Materials/dirt_steel_2.mat.meta
+Assets/Sample/Materials/rust_steel_1.mat
+Assets/Sample/Materials/rust_steel_1.mat.meta
+Assets/Sample/Materials/wood_1.mat
+Assets/Sample/Materials/wood_1.mat.meta
+Assets/Sample/Textures/Dirt steel.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_ambientOcclusion.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_ambientOcclusion.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_baseColor.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_baseColor.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_height.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_height.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_normal.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_normal.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_specularLevel.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 1/dirt_steel_1_specularLevel.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_ambientOcclusion.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_ambientOcclusion.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_baseColor.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_baseColor.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_height.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_height.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_metallic.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_metallic.png.meta
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_normal.png
+Assets/Sample/Textures/Dirt steel/Dirt steel 2/dirt_steel_2_normal.png.meta
+Assets/Sample/Textures/Rust steel.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_ambientOcclusion.png
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_ambientOcclusion.png.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_baseColor.png
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_baseColor.png.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_height.png
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_height.png.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_normal.png
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_normal.png.meta
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_specularLevel.png
+Assets/Sample/Textures/Rust steel/Rust steel 1/rust_steel_1_specularLevel.png.meta
+Assets/Sample/Textures/Wood.meta
+Assets/Sample/Textures/Wood/Wood 1.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_ambientOcclusion.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_ambientOcclusion.png.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_baseColor.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_baseColor.png.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_height.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_height.png.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_normal.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_normal.png.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_opacity.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_opacity.png.meta
+Assets/Sample/Textures/Wood/Wood 1/wood_1_specularLevel.png
+Assets/Sample/Textures/Wood/Wood 1/wood_1_specularLevel.png.meta

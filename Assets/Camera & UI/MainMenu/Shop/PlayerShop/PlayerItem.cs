@@ -10,9 +10,11 @@ public class PlayerItem : MonoBehaviour {
     [SerializeField] GameObject purchase;
     [SerializeField] GameObject select;
     [SerializeField] GameObject selected;
+    
     [SerializeField] Material myMaterial;
     [SerializeField] Material playerMaterial;
 
+    [Header("StandartForAllItems")]
     [SerializeField] bool isDefault = false;
     [SerializeField] Shop shop;
     [SerializeField] TextMeshProUGUI nameText;
