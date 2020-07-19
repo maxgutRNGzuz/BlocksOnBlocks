@@ -59,6 +59,6 @@ public class Shop : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         purchasedPlayerItems = data.purchasedPlayerItems.ToList();
         purchasedPlatformItems = data.purchasedPlatformItems.ToList();
-
+        purchasedBottomItems = data.purchasedBottomItems.ToList();
     }
 }

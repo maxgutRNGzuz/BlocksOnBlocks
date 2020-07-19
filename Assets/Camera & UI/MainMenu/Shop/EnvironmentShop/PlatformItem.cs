@@ -52,7 +52,9 @@ public class PlatformItem : MonoBehaviour {
         }
         for (int i = 0; i < _myMaterials.Length; i++)
         {
+            _myMaterials[i].EnableKeyword("_METALLICGLOSSMAP");
             myMaterials.Add(keys[i], _myMaterials[i]);
+            _platformMaterials[i].EnableKeyword("_METALLICGLOSSMAP");
             platformMaterials.Add(keys[i], _platformMaterials[i]);
         }
     }

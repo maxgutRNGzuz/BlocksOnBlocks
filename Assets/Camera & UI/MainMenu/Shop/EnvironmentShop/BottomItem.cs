@@ -43,29 +43,29 @@ public class BottomItem : MonoBehaviour {
         if(isDefault && shop.purchasedBottomItems.Contains(index) == false){
             shop.purchasedBottomItems.Add(index);
         }
-        //CheckButtonState();  
+        CheckButtonState();  
     }
 
-    // void CheckButtonState(){
-    //     if(shop.purchasedPlatformItems.Contains(index) == true){   
-    //         if(platformMaterials[keys[0]].color == myMaterials[keys[0]].color){ // just checks 1 material 
-    //             currentState = ButtonStates.selected;
-    //             if(purchase){
-    //                 purchase.SetActive(false);
-    //             }
-    //             select.SetActive(false);
-    //             selected.SetActive(true);
-    //         } 
-    //         else{
-    //             currentState = ButtonStates.notSelected;
-    //             if(purchase){
-    //                 purchase.SetActive(false);
-    //             }
-    //             select.SetActive(true);
-    //             selected.SetActive(false);
-    //         }
-    //     }
-    // }
+    void CheckButtonState(){
+        if(shop.purchasedPlatformItems.Contains(index) == true){   
+            if(myMaterial.GetTexture("_MainTex") == bottomMaterial.GetTexture("_MainTex")){ // just checks albedo texture
+                currentState = ButtonStates.selected;
+                if(purchase){
+                    purchase.SetActive(false);
+                }
+                select.SetActive(false);
+                selected.SetActive(true);
+            } 
+            else{
+                currentState = ButtonStates.notSelected;
+                if(purchase){
+                    purchase.SetActive(false);
+                }
+                select.SetActive(true);
+                selected.SetActive(false);
+            }
+        }
+    }
 
     public void OnButtonPress(){
         if(currentState == ButtonStates.notPurchased){
