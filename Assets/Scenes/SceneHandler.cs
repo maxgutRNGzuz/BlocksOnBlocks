@@ -83,8 +83,14 @@ public class SceneHandler : MonoBehaviour
     }
 
     public void MainMenu(){
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadMainMenu());
     } 
+
+    IEnumerator LoadMainMenu(){
+        anim.SetTrigger("FadeIn");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
+    }
 
     public bool IsLastPhase(){
         if(PlayerStats.Phase == 3){ // last phase

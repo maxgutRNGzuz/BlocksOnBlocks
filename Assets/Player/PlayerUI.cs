@@ -28,7 +28,6 @@ public class PlayerUI : MonoBehaviour
     [Header("Pause")]
     [SerializeField] TextMeshProUGUI continueCountdown;
     [SerializeField] Button pauseButton;
-    [SerializeField] TextMeshProUGUI pauseScoreText;
 
     PlayerMovement playerMovement;
     Rigidbody rb;
@@ -110,12 +109,9 @@ public class PlayerUI : MonoBehaviour
     public void Pause(){
         PlayerStats.Score = playerMovement.score;
         PlayerStats.Coins = coins;
-        pauseScoreText.text = PlayerStats.Score.ToString("000 000 000");
         rb.isKinematic = true;
         playerMovement.enabled = false;
-        scoreText.enabled = false;
         pauseButton.enabled = false;
-        coinText.enabled = false;
         playerMovement.PauseAnim();
     }
 
@@ -123,10 +119,7 @@ public class PlayerUI : MonoBehaviour
         StartCoroutine(ContinueCountdown());
     }
 
-    IEnumerator ContinueCountdown(){
-        scoreText.enabled = true;
-        coinText.enabled = true;
-        
+    IEnumerator ContinueCountdown(){        
         int i = 3;
         while(i>0){
             continueCountdown.enabled = true;
